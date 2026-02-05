@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training artifacts
+models/tuner_logs/
+models/*_best_model.keras
+models/label_encoder.pkl
+
+# Allow ONLY the best model
+!models/best_overall_model.keras
