@@ -2,6 +2,6 @@ streamlit==1.54.0
 numpy
 pandas
 scikit-learn
-tensorflow==2.15.0
+tensorflow-cpu==2.15.0
 keras-tuner
 joblib
