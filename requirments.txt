@@ -1,6 +1,7 @@
-numpy==1.26.4
-pandas==2.2.2
-scikit-learn==1.4.2
-streamlit>=1.30.0
+streamlit==1.54.0
+numpy
+pandas
+scikit-learn
 tensorflow==2.15.0
-keras-tuner==1.4.7
+keras-tuner
+joblib
