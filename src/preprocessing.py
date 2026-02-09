@@ -9,7 +9,7 @@ Handles:
 
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
 
 
 from sklearn.model_selection import train_test_split
@@ -56,7 +56,8 @@ def encode_labels(y: pd.Series) -> np.ndarray:
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
 
-    joblib.dump(label_encoder, LABEL_ENCODER_PATH)
+    with open(LABEL_ENCODER_PATH, "wb") as f:
+        pickle.dump(label_encoder, f)
 
     return y_encoded
 
@@ -89,7 +90,8 @@ def tokenizer_and_pad(texts: pd.Series) -> np.ndarray:
         truncating = "post"
     )
 
-    joblib.dump(tokenizer, TOKENIZER_PATH)
+    with open(TOKENIZER_PATH, "wb") as f:
+        pickle.dump(tokenizer, f)
 
     return padded_sequences
 

@@ -13,7 +13,7 @@ Twitter Post Sentiment Analysis
 from typing import Any, Dict, List
 from pathlib import Path
 
-import joblib
+import pickle
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -58,7 +58,8 @@ def load_tokenizer():
             raise FileNotFoundError(
                 f"Tokenizer not found at {TOKENIZER_PATH}"
             )
-        _tokenizer = joblib.load(TOKENIZER_PATH)
+        with open(TOKENIZER_PATH, "rb") as f:
+            _tokenizer = pickle.load(f)
     return _tokenizer
 
 
@@ -69,7 +70,8 @@ def load_label_encoder():
             raise FileNotFoundError(
                 f"LabelEncoder not found at {LABEL_ENCODER_PATH}"
             )
-        _label_encoder = joblib.load(LABEL_ENCODER_PATH)
+        with open(LABEL_ENCODER_PATH, "rb") as f:
+            _label_encoder = pickle.load(f)
     return _label_encoder
 
 
